@@ -27,14 +27,14 @@ This package is the UI layer. Show / hide it and pass data from your own client 
 
 ## Installation
 
-1. Put the `scratch-card-ui` folder into your resource (or copy `frontend/` into an existing resource).
+1. Put the `scratch-card-ui` folder into your server resources.
 2. Point your `fxmanifest.lua` `ui_page` at the HTML entry:
    ```lua
-   ui_page 'frontend/index.html'
+   ui_page 'index.html'
 
    files {
-       'frontend/index.html',
-       'frontend/assets/**/*'
+       'index.html',
+       'assets/**/*'
    }
    ```
 3. Open / close the NUI from your client script (`SetNuiFocus`, `SendNUIMessage`, etc.).
@@ -42,7 +42,7 @@ This package is the UI layer. Show / hide it and pass data from your own client 
 
 ### Local preview
 
-Open `frontend/index.html` in a browser (or serve the `frontend/` folder). No build step.
+Open `index.html` in a browser. No build step.
 
 ---
 
@@ -57,7 +57,7 @@ Scaling uses `html { font-size: 1vh }` so all `rem` sizes scale with viewport he
 
 ---
 
-## Changing colors (`frontend/assets/css/colors.css`)
+## Changing colors (`assets/css/colors.css`)
 
 All accent colors come from CSS variables. Edit this file only — components already use `var(--green*)`.
 
@@ -145,20 +145,19 @@ createApp({
 ```
 scratch-card-ui/
 ├── README.md
-└── frontend/
-    ├── index.html
-    └── assets/
-        ├── css/
-        │   ├── fonts.css
-        │   ├── colors.css
-        │   ├── base.css
-        │   ├── utilities.css
-        │   └── animations.css
-        ├── fonts/
-        ├── img/
-        └── js/
-            ├── vue.global.prod.js
-            └── script.js
+├── index.html
+└── assets/
+    ├── css/
+    │   ├── fonts.css
+    │   ├── colors.css
+    │   ├── base.css
+    │   ├── utilities.css
+    │   └── animations.css
+    ├── fonts/
+    ├── img/
+    └── js/
+        ├── vue.global.prod.js
+        └── script.js
 ```
 
 ---
