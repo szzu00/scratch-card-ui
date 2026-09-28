@@ -1,0 +1,11 @@
+:root {
+    --green: #53FFA9;
+    --green-dark: #329965;
+    --green-a50: rgba(83, 255, 169, 0.5);
+    --green-dark-a50: rgba(50, 153, 101, 0.5);
+    --green-a25: rgba(83, 255, 169, 0.25);
+    --green-dark-a25: rgba(50, 153, 101, 0.25);
+    --green-dark-a20: rgba(50, 153, 101, 0.2);
+
+    --green-hue: 150;
+}
