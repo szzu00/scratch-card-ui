@@ -21,7 +21,7 @@ This package is the UI layer. Show / hide it and pass data from your own client 
 
 - [FiveM](https://fivem.net/) (for in-game use)
 - Modern browser (for local preview)
-- Vue 3 via CDN (already linked in `script.js`)
+- Vue 3 (local build in `assets/js/vue.global.prod.js`)
 
 ---
 
@@ -122,10 +122,10 @@ Interactive tiles also use `.btn.press`.
 
 ## Vue 3 (`assets/js/script.js`)
 
-Mounted via CDN ES module. Composition API with `setup()`:
+Vue 3.5.13 is shipped locally as `assets/js/vue.global.prod.js` (no CDN, works with `file://` and FiveM NUI). Composition API with `setup()`:
 
 ```js
-import { createApp } from 'https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.esm-browser.js'
+const { createApp } = Vue
 
 createApp({
     setup() {
@@ -134,8 +134,8 @@ createApp({
 }).mount('#app')
 ```
 
+- Load order in `index.html`: `vue.global.prod.js` first, then `script.js`.
 - Root uses `v-cloak` (hidden until Vue is ready).
-- Script tag must stay `type="module"`.
 - Extend `setup()` for open/scratch logic and NUI message handlers when you add the backend.
 
 ---
@@ -157,6 +157,7 @@ scratch-card-ui/
         ├── fonts/
         ├── img/
         └── js/
+            ├── vue.global.prod.js
             └── script.js
 ```
 
